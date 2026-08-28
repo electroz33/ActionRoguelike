@@ -11,11 +11,15 @@ struct FRougeAttributeSet
 {
 	GENERATED_BODY()
 	
-	FRougeAttributeSet()
-		: Health(100.0f) {}
+	FRougeAttributeSet(): 
+		Health(100.0f),
+		MaxHealth(100.0f) {}
 	
 	UPROPERTY(BlueprintReadOnly)
 	float Health;
+	
+	UPROPERTY(BlueprintReadOnly)
+	float MaxHealth;
 };
 
 
@@ -39,4 +43,7 @@ public:
 	
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChanged OnHealthChanged;
+	
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	bool IsFullHealth() const;
 };

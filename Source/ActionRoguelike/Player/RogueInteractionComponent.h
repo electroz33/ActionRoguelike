@@ -20,6 +20,12 @@ protected:
 	UPROPERTY()
 	TObjectPtr<AActor> SelectedActor;
 
+	UPROPERTY(EditDefaultsOnly, Category="Interaction")
+	float DistanceToWeightScale = 2.0f;
+	
+	UPROPERTY(EditDefaultsOnly, Category="Interaction")
+	float DirectionWeightScale = 1.0f;
+
 public:
 
 	void Interact();
